@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./index-style.css">
+    <script>
+        function routeOnClick() {
+            window.location.href = "/about";
+        }
+
+        function jumpToFacebook(){
+            window.location.href = '/facebook';
+        }
+
+        function jumpToTwitter(){
+            window.location.href = '/twitter';
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello World !</h1>
+    <nav>
+        <ul>
+            <li><button onclick="routeOnClick()">About</button></li>
+            <li><button onclick="jumpToFacebook()">Facebook</button></li>
+            <li><button onclick="jumpToTwitter()">Twitter</button></li>
+        </ul>
+    </nav>
+    
+</body>
+</html>
