@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 500px;
+}
+
+ul{
+    list-style: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}

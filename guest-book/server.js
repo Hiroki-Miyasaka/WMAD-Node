@@ -9,6 +9,8 @@ app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(express.static('./public'));
+
 app.get('/home', (req, res) => {
     res.render('home');
 })
