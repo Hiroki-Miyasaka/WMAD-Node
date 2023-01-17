@@ -11,9 +11,15 @@
     <ul>
         <% for(let note of notes) { %>
             <li>
+                <%= note.name %>
                 <%= note.note %>
             </li>
         <% } %>
+    </ul>
+
+    <ul>
+        <li><a href="home">Home</a></li>
+        <li><a href="leave">Leave</a></li>
     </ul>
 </body>
 </html>

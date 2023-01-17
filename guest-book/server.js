@@ -15,7 +15,8 @@ app.get('/home', (req, res) => {
 
 const notes = [
     {
-        note: 'Hiroki'
+        name: 'Hiroki',
+        note: 'Hello'
     }
 ];
 
@@ -23,21 +24,25 @@ app.get('/leave', (req, res) => {
     res.render('leave');
 })
 
-app.post('/leave', (req, res) => {
-    const {note} = req.body;
+app.post('/read', (req, res) => {
+    const {note, name} = req.body;
 
     const newNote = {
+        name: name,
         note: note
     }
 
     notes.push(newNote);
-    res.render('read',{notes});
+    res.render('read', {notes});
 })
 
 app.get('/read', (req, res) => {
     res.render('read', {notes});
 })
 
+app.all('*', (req, res) => {
+    res.render('404-not');
+ })
 
 app.listen(5001, () =>{
     console.log('Server started on port 5001');
