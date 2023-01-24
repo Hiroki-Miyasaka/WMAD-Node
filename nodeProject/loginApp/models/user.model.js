@@ -1,22 +1,22 @@
 import { Sequelize, DataTypes } from "sequelize";
 
 const sequelize = new Sequelize(
-    'loginsystem',
-    'root',
-    'password',
+    'loginsystem', // Database name
+    'root', // Database Username
+    'password', // Database Password
     {
-        host: 'localhost',
-        dialect: 'mysql'
+        host: 'localhost', // Database Host
+        dialect: 'mysql' // Database Type
     }
 );
 
 sequelize.authenticate().then(() => {
-    console.log('Connection has been established successfully');
+    console.log("Connection has ben established successfully");
 }).catch((err) => {
-    console.err('Unable to connect to the database:', err);
+    console.error("Unable to connect to the database: ", err);
 })
 
-const User = sequelize.define('users', {
+const User = sequelize.define("users", {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -38,9 +38,10 @@ const User = sequelize.define('users', {
 });
 
 sequelize.sync().then(() => {
-    console.log('User table created successfully');
+    // sync() creates table if it doesn't exist
+    console.log("User table created successfully");
 }).catch((err) => {
-    console.log('Unable to create table:', err);
+    console.log("Unable to create table: ", err);
 })
 
 export default User;
