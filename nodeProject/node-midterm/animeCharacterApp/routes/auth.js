@@ -1,6 +1,6 @@
 import express from 'express';
 import CharacterInfo from '../models/character.model.js';
-import imageUrl from '../cloud/cloudinary';
+import imageUrl from './cloud/cloudinary';
 
 const router = express.Router();
 
