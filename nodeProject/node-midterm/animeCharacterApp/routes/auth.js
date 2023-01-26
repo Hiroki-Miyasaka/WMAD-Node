@@ -1,6 +1,6 @@
 import express from 'express';
 import CharacterInfo from '../models/character.model.js';
-import imageUrl from './cloud/cloudinary';
+import cloudinary from '../cloud/cloudinary.js';
 
 const router = express.Router();
 
@@ -20,6 +20,11 @@ router.get('/new', (req, res) => {
 
 // add character info
 router.post('/new', (req, res) => {
+
+    // here you need to get user data from client side
+    // and then save it image to cloudinary and get the url
+    // then save the url with other information to database
+
     CharacterInfo.findOne({
         where: {
             characterName: req.body.characterName,
@@ -29,7 +34,7 @@ router.post('/new', (req, res) => {
         else{
             CharacterInfo.create({
                 characterName: req.body.characterName,
-                image: imageUrl
+                // image: imageUrl
             }).then((character) => {
                 if(character) res.render('../pages/new', {message: 'Add character successfull', title: 'Add Information'});
             }).catch((err) => {
