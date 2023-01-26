@@ -9,6 +9,8 @@ const dbPassword = process.env.DB_PASSWORD;
 const dbHost = process.env.DB_HOST;
 const dbDiarect = process.env.DB_DIARECT;
 
+console.log(dbName, dbUser, dbPassword, dbHost, dbDiarect);
+
 const sequelize = new Sequelize(
     dbName,
     dbUser,

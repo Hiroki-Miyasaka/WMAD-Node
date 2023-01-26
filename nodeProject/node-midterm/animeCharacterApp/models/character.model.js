@@ -13,14 +13,14 @@ const CharacterInfo = sequelize.define('characters', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    image: {
+    characterImage: {
         type: DataTypes.STRING,
         allowNull: false
     }
 });
 
 sequelize.sync().then(() => {
-    console.log("User table created successfully");
+    console.log("Character table created successfully");
 }).catch((err) => {
     console.log("Unable to create table: ", err);
 })
