@@ -26,13 +26,13 @@ router.post('/new', (req, res) => {
             characterName: req.body.characterName,
         }
     }).then((character) => {
-        if(character) res.render('../pages/index', {message: 'The character has been registered', title: "Characters Infomation"});
+        if(character) res.render('pages/index', {message: 'The character has been registered', title: "Characters Infomation"});
         else{
             CharacterInfo.create({
                 characterName: req.body.characterName,
                 characterImage: req.body.characterImage
             }).then((character) => {
-                if(character) res.render('../pages/new', {message: 'Add character successfull', title: 'Add Information'});
+                if(character) res.render('pages/new', {message: 'Add character successfull', title: 'Add Information'});
             }).catch((err) => {
                 console.log(err);
             })
